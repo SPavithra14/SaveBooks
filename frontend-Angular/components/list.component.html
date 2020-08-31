@@ -1,0 +1,49 @@
+<div>
+  <br>
+    <mat-card class="head">
+      <section class="mat-typography">
+        <h2>Reading is dreaming with open eyes!!!</h2>
+      </section>
+    <button class="btn btn-custom left" type="button" routerLink="/create">Add your favourite book</button>
+    <br><br>
+    
+    <br>
+    <table mat-table [dataSource]="books">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell class="hh"*matHeaderCellDef>Name</th>
+        <td mat-cell class="gg"*matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="author">
+        <th mat-header-cell class="hh" *matHeaderCellDef>Author</th>
+        <td mat-cell class="gg"*matCellDef="let element"> {{element.author}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="language">
+        <th mat-header-cell class="hh"*matHeaderCellDef>Language</th>
+        <td mat-cell class="gg"*matCellDef="let element"> {{element.language}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="yearofpublication">
+        <th mat-header-cell class="hh" *matHeaderCellDef>Year of Publication</th>
+        <td mat-cell class="gg"*matCellDef="let element"> {{element.yearofpublication}} </td>
+      </ng-container>
+
+      <ng-container  matColumnDef="actions">
+        <th mat-header-cell class="hh"*matHeaderCellDef >Actions</th>
+        <td mat-cell class="gg" *matCellDef="let element" >
+          <a class="action-btn">
+          <i class="material-icons" (click)="editBook(element._id)">edit</i>
+          </a>
+          <a class="action-btn">
+          <i class ="material-icons" (click)="deleteBook(element._id)">delete</i>
+        </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </mat-card>
+</div>

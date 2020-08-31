@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+.mat-column-right {
+    text-align: center;
+}
+.head{
+    text-align: center;
+    font-size-adjust: inherit;
+    background-color: lightcoral;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.card{
+    background-color: rgb(43, 30, 32);
+}
+.hh{
+    background-color: gray;
+}
+.gg{
+    background-color: palegreen;
+}

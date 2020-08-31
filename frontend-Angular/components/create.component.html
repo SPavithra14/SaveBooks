@@ -1,0 +1,36 @@
+<div>
+<br>
+  <mat-card class="head">
+    <section class="mat-typography">
+      <h3>Which one is favourite for you!!!</h3>
+    </section>
+    <br>
+  </mat-card>
+  <mat-card class="create">
+    <form [formGroup]="createForm" class="create-form">
+      
+        <input matInput placeholder="Enter book name" formControlName="name" #name>
+        <!--<mat-error *ngIf="createForm.controls['title'].errors.required">
+          Title is <strong>required</strong>
+        </mat-error>-->
+      
+        <input matInput placeholder="Enter author name" formControlName="author" #author>
+
+         <mat-form-field>
+          <mat-select placeholder="Enter book language" formControlName="language" #language>
+            <mat-option value="English">English</mat-option>
+            <mat-option value="Tamil">Tamil</mat-option>
+            <mat-option value="Others">Others</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        <input matInput placeholder="Enter the publication year" formControlName="yearofpublication" #yearofpublication>
+      <br><br>
+      
+      <button class="btn btn-custom left" type="button" routerLink="/list">Back</button>&nbsp;
+      
+      <button class="btn btn-custom left"type="submit" (click)="addBook(name.value, author.value, language.value, yearofpublication.value)" [disabled]="createForm.pristine || createForm.invalid">Save</button>
+    </form>
+  </mat-card>
+  
+</div>

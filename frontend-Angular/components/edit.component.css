@@ -1,0 +1,17 @@
+.edit-form {
+    min-width: 150px;
+    width: 100%;
+}
+
+
+.field-full-width {
+    width: 100%;
+}
+.head{
+    background-color:grey;
+    text-align:left;
+    color:black;
+}
+.create{
+    background-color:palegreen;
+}
